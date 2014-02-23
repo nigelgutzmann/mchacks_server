@@ -34,6 +34,20 @@ def place_move(request, col, player):
       'board': board,
     })
 
+def drop_bomb(request, col):
+  global board
+  col = int(col)
+  index = 0
+  for row in board:
+    if board[index][col] != 0:
+      board[index][col] = 0
+      break
+    index = index + 1
+
+  return JsonResponse({
+      'board': board,
+    })
+
 def reset_game(request):
   global board
   board = [

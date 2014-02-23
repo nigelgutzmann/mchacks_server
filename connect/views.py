@@ -23,17 +23,12 @@ def place_move(request, col, player):
   global board
   col = int(col)
   player = int(player)
-  index = 0
+  index = 5
   for row in board:
     if board[index][col] == 0:
-      print player
-      print index
-      print col
-      print board
       board[index][col] = player
-      print board
       break
-    index = index + 1
+    index = index - 1
 
   return JsonResponse({
       'board': board,

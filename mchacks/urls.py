@@ -15,7 +15,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^move/(?P<col>\d+)/(?P<player>\d+)/', 'connect.views.place_move', name='place_move'),
+    url(r'^move/(?P<col>\d+)/(?P<player>.+)/', 'connect.views.place_move', name='place_move'),
     url(r'^reset/', 'connect.views.reset_game', name='reset_game'),
     url(r'^board/', 'connect.views.get_board', name='get_board'),
 )
